@@ -2,4 +2,5 @@
 
 ##How to clone repository to local##
 
-+# First 
+You should open terminal and write:
+git clone https://github.com/oralemre/Cmpe561_Homework1.git 
