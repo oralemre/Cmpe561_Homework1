@@ -242,10 +242,10 @@ public class NaiveBayes {
 			ArrayList<Double> probs = new ArrayList<Double>();
 			for(int j = 0; j < C.size(); j++){
 				if(C.get(j).getFeatureFrequency().get(Voc.get(i)) != null){
-					Double prob = ((double)(C.get(j).getFeatureFrequency().get(Voc.get(i))+alfa))/(C.get(j).getNumberOfWords() + alfa*Voc.size());
+					Double prob = ((double)(C.get(j).getFeatureFrequency().get(Voc.get(i))+alfa))/(C.get(j).getNumberOfWords() + alfa*Voc.size()); // conditional probabilities by using Laplace Smoothing BoWs Features
 					probs.add(prob);
 				}else{
-					Double prob = ((double)(alfa))/(C.get(j).getNumberOfWords() + alfa*Voc.size());
+					Double prob = ((double)(alfa))/(C.get(j).getNumberOfWords() + alfa*Voc.size()); // conditional probabilities by using Laplace Smoothing BoWs Features
 					probs.add(prob);
 				}
 			}
@@ -256,10 +256,10 @@ public class NaiveBayes {
 			ArrayList<Double> probs = new ArrayList<Double>();
 			for(int j = 0; j < C.size(); j++){
 				if(C.get(j).getFeatureFrequency().get("f_" + functionWords.get(i)) != null){
-					Double prob = ((double)(C.get(j).getFeatureFrequency().get("f_" + functionWords.get(i))+alfa))/(C.get(j).getNumberOfFunctionalWords() + alfa*functionWords.size());
+					Double prob = ((double)(C.get(j).getFeatureFrequency().get("f_" + functionWords.get(i))+alfa))/(C.get(j).getNumberOfFunctionalWords() + alfa*functionWords.size()); // conditional probabilities by using Laplace Smoothing Fws Features
 					probs.add(prob);
 				}else{
-					Double prob = ((double)(alfa))/(C.get(j).getNumberOfFunctionalWords() + alfa*functionWords.size());
+					Double prob = ((double)(alfa))/(C.get(j).getNumberOfFunctionalWords() + alfa*functionWords.size()); // conditional probabilities by using Laplace Smoothing FWs Features
 					probs.add(prob);
 				}
 			}
@@ -308,11 +308,11 @@ public class NaiveBayes {
 		/* 
 		 * Tokenization Algorithm 
 		 */
-		if(s.matches("[a-zA-Z\\p{L}\\\\.,?!/-:“”’]*")){
+		if(s.matches("[a-zA-Z\\p{L}\\\\.,?!/-:Â“Â”Â’]*")){
 			char[] chars = s.toCharArray();
 			ArrayList<Character> finalChars = new ArrayList<Character>();
 			for(int i = 0; i < chars.length; i++){
-				if(String.valueOf(chars[i]).matches("[\\\\.,?!/:“”]{1}")){
+				if(String.valueOf(chars[i]).matches("[\\\\.,?!/:Â“Â”]{1}")){
 				}else{
 					finalChars.add(chars[i]);
 				}
