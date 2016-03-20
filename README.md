@@ -12,7 +12,14 @@ Change directory as where you clone repository. If you open that directory, you 
  
 command and see result for those test and training set. If you want to run program on another test and training set run
 
-    java -jar TestAndTraining.jar
+    java -jar TestAndTraining.jar <path of raw data> 
+
+(i.e in my local, path of raw data is C:/Users/samsung/Desktop/SPRING2016/CMPE561/69yazar/raw_texts)    
+first and then again run 
+
+    java -jar NaiveBayes.jar
+    
+command.
 
 ### Some Notes
 
