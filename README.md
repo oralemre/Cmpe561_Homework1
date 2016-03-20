@@ -23,7 +23,7 @@ command.
 
 ### Some Notes
 
-TestAndTraining jar run in 20-30 seconds and NaiveBayes run in 60-80 seconds. If you encounter any problem when running programs please open an issue and make me informed about that. Also these projects are written in java7 so be sure that you have java7. 
+TestAndTraining jar run in 20-30 seconds and NaiveBayes run in 60-80 seconds. If you encounter any problem when running programs please open an issue and make me informed about that. Also these projects are written in java7 so be sure that you have java7. To run NaiveBayes on another dataset first run TestAndTraining jar by giving path of raw data and then run NaiveBayes.jar.
 
 
 
