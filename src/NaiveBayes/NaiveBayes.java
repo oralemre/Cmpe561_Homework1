@@ -27,7 +27,7 @@ public class NaiveBayes {
 	
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		testPath = System.getProperty("user.dir") + "/test";
+		testPath = System.getProperty("user.dir") + "/test"; // path of test set , TestAndTraining program create test and training path in current path
 		trainingPath = System.getProperty("user.dir") + "/training";
 		functionWordPath = System.getProperty("user.dir") + "/fWords.txt";
 		classes = (new File(trainingPath)).list(); // authors
@@ -41,12 +41,12 @@ public class NaiveBayes {
 		Double microPrecision = 0.0;
 		Double microRecall = 0.0;
 		
-		createFunctionWords();
-		createVocAndClasses();
-		createTestDocuments();
-		calculateCondProbs();
+		createFunctionWords(); // by using fWords.txt  it creates arraylist for functional words.
+		createVocAndClasses(); // this method creates Classes and adds them to Classes Array (C), also create Vocabulary;
+		createTestDocuments(); // this method creates test documents
+		calculateCondProbs(); // calculate conditional probabilities of features respect to classes.
 		for(int i = 0; i < testDocs.size(); i++){
-			applyMultinomialNB(testDocs.get(i),false);
+			applyMultinomialNB(testDocs.get(i),false); // first apply Multinomial NB for BoW features.
 			if(testDocs.get(i).getExpected().equals(testDocs.get(i).getActual())){
 				C.get(nameAndClass.get(testDocs.get(i).getExpected()).getIndex()).
 				setTp(C.get(nameAndClass.get(testDocs.get(i).getExpected()).getIndex()).getTp()+1);				
@@ -101,7 +101,7 @@ public class NaiveBayes {
 		
 		for(int i = 0; i < testDocs.size(); i++){
 			testDocs.get(i).setProbs(new ArrayList<Double>());
-			applyMultinomialNB(testDocs.get(i),true);
+			applyMultinomialNB(testDocs.get(i),true); // then apply Multinomial NB for BoW + FWs features
 			if(testDocs.get(i).getExpected().equals(testDocs.get(i).getActual())){
 				C.get(nameAndClass.get(testDocs.get(i).getExpected()).getIndex()).
 				setTp(C.get(nameAndClass.get(testDocs.get(i).getExpected()).getIndex()).getTp()+1);	
@@ -167,11 +167,11 @@ public class NaiveBayes {
 			for(int j = 0; j < docs.length; j++){
 				TestDocument td = new TestDocument(classes[i]);
 				try{
-					Reader reader = new InputStreamReader(new FileInputStream(docs[j].getAbsolutePath()), "windows-1254");
+					Reader reader = new InputStreamReader(new FileInputStream(docs[j].getAbsolutePath()), "windows-1254"); // for windows-1254 encoding (turkish characters)
 					BufferedReader br = new BufferedReader(reader);
 					Scanner read = new Scanner(br);
 					while(read.hasNext()){
-						String str = tokenization(read.next());
+						String str = tokenization(read.next()); // apply tokenization to all tokens and extracts words
 						if(Voc.contains(str)){
 							td.getTestWords().add(str);
 						}
@@ -219,7 +219,8 @@ public class NaiveBayes {
 								Voc.add(str);
 							}
 							if(functionWords.contains(str)){
-								c.getFeatureFrequency().put("f_"+str, 1);
+								// since this functional words also a word in a document, to distinguish words and functional words add f_ to beginning of functional words
+								c.getFeatureFrequency().put("f_"+str, 1); 
 								c.setNumberOfFunctionalWords(c.getNumberOfFunctionalWords()+1);
 							}
 							c.getFeatureFrequency().put(str, 1);

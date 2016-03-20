@@ -3,15 +3,15 @@ import java.util.Map;
 
 public class Classes {
 	private Map<String,Integer> featureFrequency;
-	private String name;
-	private Integer index;
-	private Integer numberOfWords;
-	private Integer numberOfFunctionalWords;
+	private String name; // name of the class (i.e abbasGuclu)
+	private Integer index; // (index of class in Classes ArrayList on NaiveBayes Class)
+	private Integer numberOfWords; // (total frequencies of words in a class)
+	private Integer numberOfFunctionalWords; // (total frequencies of functional words in a class)
 	private Double classProb;
-	private Double tp;
-	private Double tn;
-	private Double fp;
-	private Double fn;
+	private Double tp; // (true positive)
+	private Double tn; // (true negative)
+	private Double fp; // (false positive)
+	private Double fn; // (false negative)
 	
 	public Classes(String name, Integer index){
 		this.classProb = 1.0;

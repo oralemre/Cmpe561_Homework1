@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public class TestDocument {
-	private String expected;
-	private String actual;
-	private ArrayList<Double> probs;
-	private ArrayList<String> testWords;
+	private String expected; // expected class name of a test document
+	private String actual; // after Naive Bayes Classification selected class name of a test document
+	private ArrayList<Double> probs; // probabilities of a test document respect to each class
+	private ArrayList<String> testWords; // words in a test document
 	
 	public TestDocument(String expected){
 		this.expected = expected;

@@ -12,11 +12,11 @@ public class DivideRawData {
 	public static void main(String[] args) throws IOException {
 		
 		
-		String path = args[0];
+		String path = args[0]; // path of raw data
 		
-		ArrayList<File> fileList = new ArrayList<File>();
-		ArrayList<File> training = new ArrayList<File>();
-		ArrayList<File> test = new ArrayList<File>();
+		ArrayList<File> fileList = new ArrayList<File>(); 
+		ArrayList<File> training = new ArrayList<File>(); // list of documents in training set
+		ArrayList<File> test = new ArrayList<File>(); // list of documents in test set
 		File f = new File(path);
 		
 		File tr = new File("training");
@@ -24,17 +24,17 @@ public class DivideRawData {
 		
 		
 		if(tr.exists()){
-			FileUtils.deleteDirectory(tr);
+			FileUtils.deleteDirectory(tr); // if there is already training folder on path when program is running, first delete previous one. 
 		}
 		
 		if(te.exists()){
-			FileUtils.deleteDirectory(te);
+			FileUtils.deleteDirectory(te); // if there is already test folder on path when program is running, first delete previous one. 
 		}
 		
 		String [] files = f.list();
 		
-		new File("training").mkdir();
-		new File("test").mkdir();
+		new File("training").mkdir(); // make training directory
+		new File("test").mkdir(); // make test directory
 		
 		Random rand = new Random();
 		int  n = 0;
@@ -48,7 +48,7 @@ public class DivideRawData {
 				addfiles(new1, fileList);
 				int size = fileList.size();
 				
-				for(int j = 0; j < (size * 3)/5; j++){
+				for(int j = 0; j < (size * 3)/5; j++){ // add 60% of documents in a class to training set
 					n = rand.nextInt(fileList.size());
 					training.add(fileList.get(n));
 					File source = new File(path + "/" + files[i]+"/"+training.get(j).getName());
@@ -56,7 +56,7 @@ public class DivideRawData {
 					copyFile(source ,dest);
 					fileList.remove(n);
 				}
-				test.addAll(fileList);
+				test.addAll(fileList); // add remaining documents in a class to test set
 				for(int j = 0; j < test.size(); j++){
 					File source = new File(path + "/" + files[i]+"/"+test.get(j).getName());
 					File dest = new File("test/"+files[i]+"/"+test.get(j).getName());
@@ -72,7 +72,7 @@ public class DivideRawData {
 	}
 	
 	public static void copyFile( File from, File to ) throws IOException {
-	    Files.copy( from.toPath(), to.toPath() );
+	    Files.copy( from.toPath(), to.toPath() ); // copy files in a path to another path
 	}
 	
 	public static void addfiles (File input,ArrayList<File> files)
