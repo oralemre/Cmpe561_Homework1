@@ -30,7 +30,7 @@ finally run
 
     java -jar evaluate_hmm_tagger.jar <path of output> <path of gold data>
     
-    i.e - > java -jar evaluate_train_hmm_tagger.jar output /Users/emre.oral/Documents/CMPE561/metu_sabanci_cmpe_561/validation/turkish_metu_sabanci_val.conll 
+    i.e - > java -jar evaluate_hmm_tagger.jar output /Users/emre.oral/Documents/CMPE561/metu_sabanci_cmpe_561/validation/turkish_metu_sabanci_val.conll 
 
 command.
 
