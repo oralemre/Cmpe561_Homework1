@@ -24,7 +24,7 @@ command and then run
 
     java -jar hmm_tagger.jar <path of test data> <path of output>
     
-    i.e - > java -jar train_hmm_tagger.jar /Users/emre.oral/Documents/CMPE561/metu_sabanci_cmpe_561/validation/turkish_metu_sabanci_val.conll output
+    i.e - > java -jar hmm_tagger.jar /Users/emre.oral/Documents/CMPE561/metu_sabanci_cmpe_561/validation/turkish_metu_sabanci_val.conll output
     
 finally run
 
