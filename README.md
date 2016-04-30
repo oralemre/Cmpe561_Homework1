@@ -49,6 +49,8 @@ command.
 * confUnknownMatrix_cpostag.csv is confusion matrix for unknown words for cpostag.
 
 * confUnknownMatrix_postag.csv is confusion matrix for unknown words for postag.
+ 
+* You can find data set in metu_sabanci_cmpe_561 folder.
 
 * First run train_hmm_tagger for a tag set (postag or cpostag) and then run other two jar files and after that process run train_hmm_tagger for the other tag set and then run other two jar files again.
  
