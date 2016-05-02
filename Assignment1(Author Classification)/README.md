@@ -1,11 +1,5 @@
 # ASSIGNMENT1 (Classifier)
 
-## How to clone github repository to local?
-
-Open terminal and write this command:
-
-    git clone https://github.com/oralemre/Cmpe561_Homework1.git
-
 ## What is next after clone repository to local?
  
 Change directory as where you clone repository. If you open that directory, you see test, training folders and  NaiveBayes.jar, TestAndTraining.jar. First run 
