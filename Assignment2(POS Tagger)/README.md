@@ -1,15 +1,5 @@
 # ASSIGNMENT2 (POS Tagger)
 
-## How to clone github repository to local?
-
-Open terminal and write this command:
-
-    git clone https://github.com/oralemre/Cmpe561_Homework1.git
-    
-If you already clone repository, change directory as where the repo is located in your local and to get new files on repository use following command:
-
-    git pull
-    
 ## What is next after clone repository to local or git pull?
  
 Change directory as where you clone repository. If you open that directory, you see train_hmm_tagger.jar, hmm_tagger.jar and evaluate_hmm_tagger.jar files. First run 
