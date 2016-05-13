@@ -54,6 +54,9 @@ command.
 
 * If you have a question or problem, please open an issue and let me know about that.
 
+* Be sure that you have java8. 
+
+
 
 
 
